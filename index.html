@@ -122,45 +122,19 @@
     <p>Deseja ver minha mensagem?</p>
 
     <div class="btn-group" id="btn-group">
-      <button id="btn-mensagem">Deseja ver minha mensagem?</button>
+      <button id="btn-mensagem">Deseja ver minha mensagem</button>
     </div>
 
     <div id="response"></div>
   </div>
   <script>
-    // Número completo para WhatsApp com código do país (Brasil)
-    const whatsappNumber = '557599756277';
-
-    // Mensagens personalizadas para WhatsApp
-    const msgSim = ' SIMMM! ❤️😊';
-    const msgNao = 'Ela disse NÃO :(';
-
     const btnMensagem = document.getElementById('btn-mensagem');
     const response = document.getElementById('response');
     const btnGroup = document.getElementById('btn-group');
 
-    function enviarWhatsApp(mensagem) {
-      // Monta URL para WhatsApp Web / Mobile
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
-      // Abre em nova aba/janela
-      window.open(url, '_blank');
-    }
-
-    function mostrarResposta(texto) {
-      // Esconde os botões
-      btnGroup.style.opacity = '0';
-      setTimeout(() => {
-        btnGroup.style.display = 'none';
-
-        // Mostra a mensagem de resposta com fade-in
-        response.textContent = texto;
-        response.classList.add('visible');
-      }, 700);
-    }
-
     btnMensagem.addEventListener('click', () => {
       // Exibe a mensagem
-      response.textContent = 'Você é mt Boco!';
+      response.textContent = 'Você é mt Boco! clique na "?" para ir pro site real';
       response.classList.add('visible');
 
       // Exibe o botão "?"
@@ -170,8 +144,8 @@
 
       // Adiciona evento para o botão "?"
       document.getElementById('btn-?').addEventListener('click', () => {
-        enviarWhatsApp(msgSim);
-        mostrarResposta(msgSim);
+        // Redireciona para o site
+        window.location.href = 'https://vitorxzk.github.io/sim-ou-nao/';
       });
     });
   </script>
